@@ -27,30 +27,14 @@ public class MainController {
     }
 
     @GetMapping(value = "/allstudents")
-    public ResponseEntity<List<Students>> getAllStudents(){
+    public ResponseEntity<List<Students>> getAllStudents() {
         List<Students> students = studentService.getAllStudents();
         return new ResponseEntity<>(students, HttpStatus.OK);
     }
 
-    //    @DeleteMapping(value = "/deletestudent")
-//    public ResponseEntity<String> deleteStudent(@RequestBody Students student){
-//        studentService.deleteStudent(student);
-//        return new ResponseEntity<>("DELETED", HttpStatus.OK);
-//    }
-
-//    @DeleteMapping(value = "/deletestudent")
-//    public ResponseEntity<String> deleteStudent(@RequestParam(name="id") Long id){
-//        studentService.deleteStudent(id);
-//        return new ResponseEntity<>("DELETED", HttpStatus.OK);
-//    }
-
-//    @GetMapping(value = "/getstudent/{id}")
-//    public ResponseEntity<?> getStudentById(@PathVariable(name = "id") Long id){
-//        Students student = studentService.getStudentById(id);
-//        if(student != null){
-//            return ResponseEntity.ok(student);
-//        }else{
-//            return  ResponseEntity.notFound().build();
-//        }
-//    }
+    @DeleteMapping(value = "/deletestudent")
+    public ResponseEntity<String> deleteStudent(@RequestParam(name="id") Long id){
+        studentService.deleteStudent(id);
+        return new ResponseEntity<>("DELETED", HttpStatus.OK);
+    }
 }
