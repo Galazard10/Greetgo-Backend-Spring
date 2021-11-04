@@ -1,6 +1,5 @@
 package kz.greetgo.react.studentsproject.entities;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,8 +18,8 @@ public class Students {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "fullName")
-    private String fullName;
+    @Column(name = "full_name")
+    private String full_name;
 
     @Column(name = "university")
     private String university;
@@ -28,7 +27,7 @@ public class Students {
     @Column(name = "faculty")
     private String faculty;
 
-    @Column(name = "yearOfStudy")
-    private int yearOfStudy;
+    @Column(name = "year_of_study")
+    private int year_of_study;
 
 }
